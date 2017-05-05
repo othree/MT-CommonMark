@@ -15,5 +15,5 @@
 
 [1]:https://movabletype.org/
 [2]:http://commonmark.org/
-[3]:https://metacpan.org/pod/CommonMark
+[3]:https://github.com/nwellnhof/perl-commonmark
 [4]:https://github.com/jgm/CommonMark
