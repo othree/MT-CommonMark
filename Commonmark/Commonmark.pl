@@ -14,7 +14,7 @@ $VERSION = '0.0.1';
 # 05 May 2017
 
 use CommonMark;
-use Encode qw(decode);
+use Encode qw(encode decode);
 
 #
 # Global default settings:
@@ -79,7 +79,8 @@ unless ($@) {
 					$g_empty_element_suffix = " />";
 				}
 			}
-			$text = $raw ? $text : decode(MT->config('PublishCharset') || 'utf-8', CommonMark->markdown_to_html($text));
+			my $enc = MT->config('PublishCharset') || 'utf-8';
+			$text = $raw ? $text : encode($enc, decode($enc, CommonMark->markdown_to_html($text)));
 			$text;
 		},
 	});
