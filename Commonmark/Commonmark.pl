@@ -8,7 +8,6 @@ require 5.006_000;
 use strict;
 use warnings;
 
-use Digest::MD5 qw(md5_hex);
 use vars qw($VERSION);
 $VERSION = '0.0.1';
 # 05 May 2017
