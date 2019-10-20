@@ -13,6 +13,7 @@ $VERSION = '0.0.1';
 # 05 May 2017
 
 use CommonMark;
+use CommonMark qw(:opt);
 use Encode qw(encode decode);
 
 #
@@ -79,7 +80,7 @@ unless ($@) {
 				}
 			}
 			my $enc = MT->config('PublishCharset') || 'utf-8';
-			$text = $raw ? $text : encode($enc, decode($enc, CommonMark->markdown_to_html($text)));
+			$text = $raw ? $text : encode($enc, decode($enc, CommonMark->markdown_to_html($text, OPT_UNSAFE)));
 			$text;
 		},
 	});
